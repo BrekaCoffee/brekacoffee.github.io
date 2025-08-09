@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BREKA</title>
+  <meta name="description" content="Mockup homepage for Breka Coffee — simple responsive HTML + CSS." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* 🔄 LOADING SCREEN */
+#loading-screen {
+  background-color: white;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.logo-container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  animation: bounce 2s infinite ease-in-out, scaleUp 2s ease-out forwards;
+  transform: scale(0);
+}
+.breka-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: flash 1s infinite;
+}
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+@keyframes scaleUp {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+.hidden {
+  display: none;
+}
+
+    /* ==========================
+       Variables & Reset
+       ========================== */
+    :root{
+      --blue-1: #55abe5;    /* header gradient start */
+      --blue-2: #55abe5;    /* header gradient end */
+      --accent: #ff9f43;    /* CTA */
+      --card-bg: #ffffff;
+      --muted: #6b7280;
+      --text: #111827;
+      --radius: 16px;
+      --soft-shadow: 0 10px 24px rgba(16,24,40,0.08);
+      --glass: rgba(255,255,255,0.85);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', SourceSans, 'Helvetica Neue', Arial;
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      background:#f7f9fb;
+      line-height:1.45;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    /* ==========================
+       Top navigation / header
+       ========================== */
+    .nav{
+      width:100%;
+      max-width:1200px;
+      margin:0 auto;
+      padding:20px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      display:flex;gap:12px;align-items:center;
+    }
+    .logo img{height:46px;width:auto;display:block}
+    .brand{
+      font-family: 'Montserrat', sans-serif;
+      font-weight:700;
+      letter-spacing:1px;
+      color:var(--text);
+    }
+
+    .hero{
+      background: linear-gradient(135deg,var(--blue-1),var(--blue-2));
+      padding:64px 24px;
+      color:white;
+      border-bottom-left-radius:24px;
+      border-bottom-right-radius:24px;
+    }
+    .hero-inner{
+      max-width:1200px;margin:0 auto;display:flex;gap:28px;align-items:center;justify-content:space-between;
+    }
+    .hero-content{flex:1;min-width:280px}
+    .eyebrow{font-weight:600;margin-bottom:12px;opacity:0.95}
+    .hero h1{
+      margin:0 0 12px 0;font-family:'Montserrat',sans-serif;font-size:48px;line-height:1.02;color:#061226;
+    }
+    .hero p{margin:0 0 22px 0;color:rgba(0,0,0,0.65);font-size:18px}
+    .btn-primary{
+      display:inline-block;padding:12px 22px;background:var(--accent);color:white;border-radius:999px;font-weight:600;box-shadow:0 6px 18px rgba(255,159,67,0.18);
+    }
+
+    .hero-art{width:44%;min-width:220px;display:flex;justify-content:flex-end}
+    .hero-art .mock{
+      width:220px;height:180px;border-radius:14px;background:linear-gradient(180deg,#fff 0%, rgba(255,255,255,0.9) 100%);display:flex;align-items:center;justify-content:center;box-shadow:var(--soft-shadow);
+    }
+    /* small decoration to hint logo area */
+    .hero-art .mock .cup{width:160px;height:120px;background:#fff;border-radius:12px;display:block}
+
+    /* ==========================
+       Sections
+       ========================== */
+    main{max-width:1200px;margin:40px auto;padding:0 24px}
+    h2.section-title{
+      text-align:center;font-family:'Montserrat',sans-serif;font-size:26px;margin:18px 0 28px;color:#111827;
+    }
+
+    .grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+    }
+
+    .card{
+      background:var(--card-bg);border-radius:18px;padding:18px;box-shadow:var(--soft-shadow);display:flex;flex-direction:column;align-items:stretch;
+    }
+    .card .media{
+      border-radius:12px;overflow:hidden;background:#f3f4f6;height:250px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+    }
+    .card img{width:120%;height:120%;object-fit:contain;display:block}
+    .card h3{margin:0 0 8px 0;font-family:'Montserrat',sans-serif;font-size:20px}
+    .card p{margin:0 0 14px 0;color:var(--muted);font-size:14px}
+    .card .cta{margin-top:auto}
+    .btn-ghost{
+      display:inline-block;padding:10px 18px;border-radius:999px;background:var(--accent);color:white;font-weight:700;box-shadow:0 0px 0px rgba(0,0,0,0.06);
+    }
+
+    .container {
+  display: flex;
+  justify-content: center; /* tengah horizontal */
+  align-items: center;     /* tengah vertikal */
+  height: 200px;           /* sesuaikan tinggi kotak biru */
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.btn-breka {
+  background-color: orange;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+    /* ==========================
+       Footer / special note
+       ========================== */
+    .special{
+      margin:60px auto;padding:36px;background:linear-gradient(180deg,#fff,#fbfbfb);border-radius:18px;box-shadow:0 12px 28px rgba(10,10,10,0.04);text-align:center;max-width:760px
+    }
+
+    footer{
+      margin-top:40px;padding:36px 24px;background:#161616;color:#fff;border-radius:12px 12px 0 0;
+      display:flex;justify-content:center;align-items:center
+    }
+
+    /* ==========================
+       Responsive
+       ========================== */
+    @media (max-width:980px){
+      .hero-inner{flex-direction:column;align-items:flex-start}
+      .hero h1{font-size:40px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .hero-art{width:100%;justify-content:flex-start}
+    }
+    @media (max-width:640px){
+      .nav{padding:12px}
+      .hero{padding:36px 16px}
+      .hero h1{font-size:32px}
+      .grid{grid-template-columns:1fr}
+      .hero-art .mock{width:160px;height:120px}
+      .card .media{height:220px}
+    }
+
+    /* small interactions */
+    .card:hover{transform:translateY(-6px);transition:transform .25s cubic-bezier(.2,.9,.3,1)}
+    .btn-primary:hover{transform:translateY(-3px);transition:transform .18s}
+
+  </style>
+</head>
+<!-- Favicon -->
+  <link rel="icon" type="image/png" href="breka_logo_512-removebg-preview.png">
+<body>
+    <div id="loading-screen">
+    <div class="logo-container">
+      <img class="breka-logo" src="breka_logo_512.png" alt="Breka Logo">
+    </div>
+  </div>
+
+  <!-- Top navigation + logo -->
+  <header class="nav" role="banner">
+    <div class="logo">
+      <!-- Replace src with your actual logo path (SVG/PNG). If you want the updated BREKA logo, put it here. -->
+      <img src="breka_logo_512.png" alt="BREKA logo" />
+      <div class="brand"></div>
+    </div>
+    <nav aria-label="primary navigation">
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Recharge Your Day</h1>
+        <p>Kopi bisa hilang dalam satu tegukan. Tapi rasa dimengerti Breka? Bisa tinggal selamanya..</p>
+        <p><a class="btn-primary" href="https://www.instagram.com/brekacoffee.id/">Order Now</a></p>
+      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Kemasan Cup -->
+    <h2 id="products" class="section-title">KEMASAN CUP</h2>
+    <section class="grid" aria-label="produk kemasan cup">
+      <article class="card">
+        <div class="media">
+          <!-- Replace with real product image -->
+          <img src="breka aren.jpg" alt="Breka aren" />
+        </div>
+        <h3>Breka Aren</h3>
+        <p>Espresso kental untuk kamu yang butuh tenaga ekstra.</p>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="breka strong.jpg" alt="breka strong" />
+        </div>
+        <h3>Breka Strong</h3>
+        <p>Kopi dingin yang diseduh lama — cocok untuk santai seharian.</p>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="breka matcha.jpg" alt="Matcha Energy" />
+        </div>
+        <h3>Breka Matcha</h3>
+        <p>Matcha creamy menyegarkan dengan energi alami.</p>
+      </article>
+    </section>
+
+    <!-- Kemasan Botol -->
+    <h2 class="section-title" style="margin-top:48px">KEMASAN BOTOL</h2>
+    <section class="grid" aria-label="produk kemasan botol">
+      <article class="card">
+        <div class="media">
+          <img src="matcha breka.jpg" alt="Matcha Energy Bottle" />
+        </div>
+        <h3>Matcha Energy</h3>
+        <p>Matchy creamy menyegarkan dengan energi alami.</p>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="breka caramel.jpg" alt="Caramel Coffee Bottle" />
+        </div>
+        <h3>Caramel Coffee</h3>
+        <p>Rasa kopi dengan sentuhan caramel manis dan creamy.</p>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="breka choco.jpg" alt="Dark Choco Bottle" />
+        </div>
+        <h3>Dark Choco</h3>
+        <p>Minuman cokelat pekat, cocok temani waktu santaimu.</p>
+      </article>
+    </section>
+
+     <section class="container">
+        <p><a class="btn-primary" href="https://awikwokuhu.github.io/breka-coffee/">Talk With Breka</a></p>
+      </section>
+
+    <div class="special">
+      <p style="margin:0;font-family:'Courier New', monospace;white-space:pre-line;">
+        Pesan Spesial Buat KAMU :)
+
+        Hidup itu perjalanan belajar tanpa akhir. Kadang kita melukai, kadang kita juga terluka.
+
+        Karena hidup bukan tentang sempurna, melainkan tentang belajar dan bertumbuh.
+
+        Tetap dijaga semangatnya ya!
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <small>© 2025 Breka Coffee. Recharge your day with <a href="https://instagram.com/brekacoffee.id" style="color:#fff;text-decoration:underline">@brekacoffee.id</a></small>
+  </footer>
+    <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loading-screen').style.display = 'none';
+        document.getElementById('main-content').classList.remove('hidden');
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
