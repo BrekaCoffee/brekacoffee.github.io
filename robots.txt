@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://awikwokuhu.github.io/breka/sitemap.xml
+Sitemap: https://brekacoffee.github.io/breka//sitemap.xml
+
