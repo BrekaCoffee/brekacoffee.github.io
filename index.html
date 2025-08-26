@@ -91,24 +91,49 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="pt-16 min-h-screen flex items-center justify-center" style="background-color:#55abe5;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center fade-slide">
-            <!-- Mobile Layout -->
-            <div class="flex flex-col items-center lg:hidden">
-                <img src="breka_logo_512.png" class="rounded-full shadow-2xl w-full max-w-[150px] sm:max-w-[200px]" alt="Breka Coffee">
-                <h1 class="text-2xl sm:text-3xl font-extrabold text-white mt-4 text-center">RECHARGE YOUR DAY<br>WITH BREKA COFFEE</h1>
-                <a href="https://brekacoffee.github.io//breka-coffee/" target="_blank" class="cta-btn bg-white text-[#55abe5] rounded-lg font-semibold hover:bg-[#FFD321] hover:text-white transition-all duration-200 shadow-lg mt-4">Talk With Breka</a>
-            </div>
-            <!-- Desktop Layout -->
-            <div class="hidden lg:flex flex-col justify-center">
-                <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-6">RECHARGE YOUR DAY<br>WITH BREKA COFFEE</h1>
-                <a href="https://brekacoffee.github.io//breka-coffee/" target="_blank" class="cta-btn bg-white text-[#55abe5] rounded-lg font-semibold hover:bg-[#FFD321] hover:text-white transition-all duration-200 shadow-lg">Talk With Breka</a>
-            </div>
-            <div class="hidden lg:flex justify-center lg:justify-end fade-slide">
-                <img src="breka_logo_512.png" class="rounded-full shadow-2xl max-w-[250px] h-auto" alt="Breka Coffee">
-            </div>
-        </div>
-    </section>
+<section id="hero" class="pt-16 min-h-screen flex items-center justify-center bg-[#55abe5]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center fade-slide">
+    
+    <!-- Mobile Layout -->
+<div class="flex flex-col items-center lg:hidden space-y-12 sm:space-y-16"> 
+  <img src="breka_logo_512.png" 
+       class="rounded-full shadow-2xl w-full max-w-[200px] sm:max-w-[240px] mt-6 sm:mt-10" 
+       alt="Breka Coffee">
+
+  <h1 class="text-2xl sm:text-3xl font-extrabold text-white text-center leading-relaxed">
+    RECHARGE YOUR DAY<br>WITH BREKA COFFEE
+  </h1>
+
+  <a href="https://brekacoffee.github.io//breka-coffee/" 
+     target="_blank" 
+     class="cta-btn bg-white text-[#55abe5] rounded-lg font-semibold 
+            hover:bg-[#FFD321] hover:text-white transition-all duration-200 
+            shadow-lg px-8 py-4 mt-4 sm:mt-6">
+     Talk With Breka
+  </a>
+</div>
+
+
+
+    <!-- Desktop Layout -->
+    <div class="hidden lg:flex flex-col justify-center space-y-6">
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white leading-snug">
+        RECHARGE YOUR DAY<br>WITH BREKA COFFEE
+      </h1>
+      <a href="https://brekacoffee.github.io//breka-coffee/" 
+         target="_blank" 
+         class="cta-btn bg-white text-[#55abe5] rounded-lg font-semibold hover:bg-[#FFD321] hover:text-white transition-all duration-200 shadow-lg px-6 py-3 w-fit">
+         Talk With Breka
+      </a>
+    </div>
+    <!-- Logo Desktop -->
+    <div class="hidden lg:flex justify-center lg:justify-end fade-slide">
+      <img src="breka_logo_512.png" 
+           class="rounded-full shadow-2xl max-w-[280px] lg:max-w-[300px] h-auto" 
+           alt="Breka Coffee">
+    </div>
+  </div>
+</section>
 
     <!-- About Section -->
 <section id="tentang" class="py-20 bg-white">
@@ -271,6 +296,7 @@
     </script>
 </body>
 </html>
+
 
 
 
