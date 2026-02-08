@@ -58,6 +58,74 @@
         @media (min-width: 641px) {
             #hero .cta-btn { padding: 0.75rem 1.75rem; display: inline-block; max-width: max-content; }
         }
+        /* === BREKA IG STYLE SLIDER (FIX SIZE, NO TABRAK) === */
+
+.breka-slider {
+  position: relative;
+  width: 100%;
+  max-width: 640px;        /* 🔥 lebih gede tapi aman */
+  height: 380px;           /* tinggi FIX → ga nabrak */
+  margin: 0 auto;
+}
+
+.breka-slide {
+  position: absolute;
+  inset: 0;
+  width: 90%;
+  height: 100%;            /* ikut tinggi wrapper */
+  margin: auto;
+  border-radius: 20px;     /* kotak rounded, bukan bulet */
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(0.92);
+  transition: all 0.45s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.breka-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 3;
+}
+
+.breka-slide.next {
+  opacity: 0.5;
+  transform: translateX(70px) scale(0.9);
+  z-index: 2;
+}
+
+.breka-slide.prev {
+  opacity: 0.5;
+  transform: translateX(-70px) scale(0.9);
+  z-index: 1;
+}
+
+/* tombol */
+.breka-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.55);
+  color: white;
+  border: none;
+  font-size: 26px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.breka-nav.left { left: -18px; }
+.breka-nav.right { right: -18px; }
+
+/* mobile aman */
+@media (max-width: 640px) {
+  .breka-slider {
+    max-width: 100%;
+    height: 260px;
+  }
+}
     </style>
 </head>
 <body class="bg-breka-light smooth-scroll">
@@ -192,6 +260,21 @@
             <button id="moreBtn" class="mt-6 px-6 py-2 bg-breka-dark text-white rounded-lg hover:bg-breka-hover transition-colors">
                 More
             </button>
+
+            <!-- Slider Foto ala Feed IG -->
+<div class="relative mt-14 max-w-md mx-auto">
+  <div class="breka-slider">
+
+    <img src="brekakiri.jpeg" class="breka-slide active">
+    <img src="brekakanan.jpeg" class="breka-slide next">
+    <img src="brekatengah.jpeg" class="breka-slide prev">
+
+  </div>
+
+  <!-- Navigation -->
+  <button id="prevSlide" class="breka-nav left">‹</button>
+  <button id="nextSlide" class="breka-nav right">›</button>
+</div>
 
             <!-- Layer 2: Konten fokus Breka (hidden awalnya) -->
             <div id="layer2" class="hidden mt-8 p-8 bg-breka-light rounded-xl shadow-lg max-w-3xl mx-auto transition-all duration-500">
@@ -348,9 +431,34 @@
             moreBtn.textContent = 'More';
         }
     });
+         // ===== SLIDER IG STYLE =====
+  const slides = document.querySelectorAll('.breka-slide');
+  let index = 0;
+
+  function updateSlide() {
+    slides.forEach((slide, i) => {
+      slide.className = 'breka-slide';
+      if (i === index) slide.classList.add('active');
+      else if (i === (index + 1) % slides.length) slide.classList.add('next');
+      else if (i === (index - 1 + slides.length) % slides.length) slide.classList.add('prev');
+    });
+  }
+
+  document.getElementById('nextSlide')?.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    updateSlide();
+  });
+
+  document.getElementById('prevSlide')?.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlide();
+  });
+
+  updateSlide();
     </script>
 </body>
 </html>
+
 
 
 
