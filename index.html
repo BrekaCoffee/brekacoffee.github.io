@@ -9,6 +9,8 @@
     <meta name="author" content="Breka Coffee">
     <meta name="description" content="BREKA COFFEE Pekanbaru – Breka Mood, Breka Booster, Breka Matcha, Montea, Brekacino, Breka Choco. Teman Recharge Kamu Setiap Hari!.">
     <link rel="canonical" href="https://brekacoffee.github.io/">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -58,13 +60,25 @@
         @media (min-width: 641px) {
             #hero .cta-btn { padding: 0.75rem 1.75rem; display: inline-block; max-width: max-content; }
         }
+        
+        .promo-title{
+font-family:'Balsamiq Sans', sans-serif;
+font-weight:700;
+font-size:3rem;
+color:#000;
+letter-spacing:1px;
+}
+.promo-text{
+font-family: 'Balsamiq Sans', sans-serif;
+font-weight: 400;
+color: black;
+}
         /* === BREKA IG STYLE SLIDER (FIX SIZE, NO TABRAK) === */
 
 .breka-slider {
   position: relative;
   width: 100%;
-  max-width: 640px;        /* 🔥 lebih gede tapi aman */
-  height: 380px;           /* tinggi FIX → ga nabrak */
+  max-width: 640px;
   margin: 0 auto;
 }
 
@@ -72,14 +86,10 @@
   position: absolute;
   inset: 0;
   width: 90%;
-  height: 100%;            /* ikut tinggi wrapper */
+  height: auto;
   margin: auto;
-  border-radius: 20px;     /* kotak rounded, bukan bulet */
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(0.92);
-  transition: all 0.45s ease;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  border-radius: 20px;
+  object-fit: contain;
 }
 
 .breka-slide.active {
@@ -126,9 +136,54 @@
     height: 260px;
   }
 }
+/* SLIDER TENTANG */
+
+.tentang-slider-wrapper{
+  position:relative;
+  max-width:600px;
+  margin:40px auto;
+  overflow:hidden;
+  border-radius:20px;
+  aspect-ratio: 4 / 3;
+}
+
+.tentang-slider{
+  display:flex;
+  transition:transform 0.5s ease;
+}
+
+.tentang-slide{
+  min-width:100%;
+  height:450px;
+  object-fit:contain;
+  background:white;
+}
+
+.tentang-prev,
+.tentang-next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.5);
+  color:white;
+  border:none;
+  font-size:26px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.tentang-prev{
+  left:10px;
+}
+
+.tentang-next{
+  right:10px;
+}
     </style>
 </head>
-<body class="bg-breka-light smooth-scroll">
+<body class="bg-white smooth-scroll">
     <div id="loading-screen">
         <div class="logo-container">
             <img class="breka-logo" src="breka_logo_512-removebg-preview.png" alt="Breka Logo">
@@ -213,6 +268,78 @@
     </div>
   </div>
 </section>
+<!-- SECTION PROMO BUKBER -->
+<section class="py-20 bg-white">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="grid md:grid-cols-2 gap-12 items-center">
+
+<!-- FOTO SLIDER -->
+<div class="relative">
+
+<div class="breka-slider" id="sliderpromo">
+
+<img src="paketiftarramadan.jpeg" class="breka-slide active">
+<img src="paket1.jpeg" class="breka-slide next">
+<img src="paket2.jpeg" class="breka-slide next">
+<img src="paket3.jpeg" class="breka-slide next">
+<img src="paket4.jpeg" class="breka-slide next">
+<img src="paket5.jpeg" class="breka-slide next">
+<img src="paket6.jpeg" class="breka-slide next">
+<img src="syarat.jpeg" class="breka-slide prev">
+
+</div>
+
+<button id="prevSlide" class="breka-nav left">‹</button>
+<button id="nextSlide" class="breka-nav right">›</button>
+
+</div>
+
+<!-- TEXT PROMO -->
+<div>
+
+<h2 class="promo-title mb-6">
+Paket Murah Buka Bersama
+</h2>
+
+<p class="promo-text text-lg mb-4">
+Udah siap bukber bareng bestie, keluarga, rekan kerja atau teman reuni sekolah? ✨
+</p>
+
+<p class="promo-text text-lg mb-4">
+Tenang, kami udah siapkan Paket Murah Buka Bersama yang bikin kenyang & happy!
+</p>
+
+<div class="promo-text space-y-2 text-lg mb-6">
+<p>✔ Makan Enak</p>
+<p>✔ Minum Enak</p>
+<p>✔ Tempat Cozy</p>
+<p>✔ Foto-Foto Cantik</p>
+</div>
+
+<p class="promo-text text-2xl font-bold text-red-500 mb-6">
+MURAAAHHH!!! 🔥🔥🔥
+</p>
+
+<a href="https://wa.me/628137100069?text=Hai%20Bre,%20aku%20mau%20reservasi%20dong"
+target="_blank"
+class="inline-flex items-center gap-2 mt-6 bg-[#25D366] text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:scale-105 transition">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M20.52 3.48A11.82 11.82 0 0012.03 0C5.39 0 .02 5.37.02 12c0 2.12.55 4.19 1.59 6.02L0 24l6.14-1.6A11.96 11.96 0 0012.03 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.51-8.52z"/>
+</svg>
+
+Reservasi via WhatsApp
+</a>  
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
     <!-- Breka Mood Section -->
 <section class="bg-white py-16">
@@ -221,7 +348,7 @@
       
       <!-- Gambar Poster -->
       <div class="flex justify-center md:justify-end">
-        <img src="brekamoodsignature.jpg" 
+        <img src="brekamoodsignature.png" 
              alt="Breka Mood Poster" 
              class="rounded-2xl shadow-lg w-full md:w-4/5 lg:w-3/4">
       </div>
@@ -261,19 +388,18 @@
                 More
             </button>
 
-            <!-- Slider Foto ala Feed IG -->
-<div class="relative mt-14 max-w-md mx-auto">
-  <div class="breka-slider">
+             <!-- Slider Foto ala Feed IG -->
+<div class="tentang-slider-wrapper">
 
-    <img src="brekakiri.jpeg" class="breka-slide active">
-    <img src="brekakanan.jpeg" class="breka-slide next">
-    <img src="brekatengah.jpeg" class="breka-slide prev">
-
+  <div class="tentang-slider">
+    <img src="brekakiri.jpeg" class="tentang-slide active">
+    <img src="brekatengah.jpeg" class="tentang-slide">
+    <img src="brekakanan.jpeg" class="tentang-slide">
   </div>
 
-  <!-- Navigation -->
-  <button id="prevSlide" class="breka-nav left">‹</button>
-  <button id="nextSlide" class="breka-nav right">›</button>
+  <button class="tentang-prev">‹</button>
+  <button class="tentang-next">›</button>
+
 </div>
 
             <!-- Layer 2: Konten fokus Breka (hidden awalnya) -->
@@ -318,7 +444,7 @@
 
     <!-- Foto Menu Lengkap -->
   <section class="max-w-4xl mx-auto px-4 py-12 text-center">
-    <img src="menubreka.jpg" alt="Menu Breka Coffee" class="rounded-lg shadow-lg mx-auto">
+    <img src="MENU-BREKA-COFFEE.png" alt="Menu Breka Coffee" class="rounded-lg shadow-lg mx-auto">
     <div class="mt-6">
     </div>
   </section>
@@ -431,7 +557,8 @@
             moreBtn.textContent = 'More';
         }
     });
-         // ===== SLIDER IG STYLE =====
+
+    // ===== SLIDER IG STYLE =====
   const slides = document.querySelectorAll('.breka-slide');
   let index = 0;
 
@@ -449,36 +576,41 @@
     updateSlide();
   });
 
-  document.getElementById('prevSlide')?.addEventListener('click', () => {
+  document.getElementById('prevSlide')?.addEventListener('click', () => { 
     index = (index - 1 + slides.length) % slides.length;
     updateSlide();
   });
 
   updateSlide();
+/* SLIDER TENTANG */
+
+const tentangSlider = document.querySelector(".tentang-slider");
+const tentangSlides = document.querySelectorAll(".tentang-slide");
+
+const tentangPrev = document.querySelector(".tentang-prev");
+const tentangNext = document.querySelector(".tentang-next");
+
+let tentangIndex = 0;
+
+function updateTentangSlider(){
+  tentangSlider.style.transform = "translateX(-" + tentangIndex * 100 + "%)";
+}
+
+tentangNext.addEventListener("click", ()=>{
+  tentangIndex++;
+  if(tentangIndex >= tentangSlides.length){
+    tentangIndex = 0;
+  }
+  updateTentangSlider();
+});
+
+tentangPrev.addEventListener("click", ()=>{
+  tentangIndex--;
+  if(tentangIndex < 0){
+    tentangIndex = tentangSlides.length - 1;
+  }
+  updateTentangSlider();
+});
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
