@@ -60,47 +60,6 @@
         @media (min-width: 641px) {
             #hero .cta-btn { padding: 0.75rem 1.75rem; display: inline-block; max-width: max-content; }
         }
-    
-.breka-slider {
-  position: relative;
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
-}
-.breka-slider {
-  position: relative;
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.breka-slide {
-  position: absolute;
-  inset: 0;
-  width: 90%;
-  height: auto;
-  margin: auto;
-  border-radius: 20px;
-  object-fit: contain;
-}
-
-.breka-slide.active {
-  opacity: 1;
-  transform: scale(1);
-  z-index: 3;
-}
-
-.breka-slide.next {
-  opacity: 0.5;
-  transform: translateX(70px) scale(0.9);
-  z-index: 2;
-}
-
-.breka-slide.prev {
-  opacity: 0.5;
-  transform: translateX(-70px) scale(0.9);
-  z-index: 1;
-}
 
 /* tombol */
 .breka-nav {
@@ -173,12 +132,27 @@
 .tentang-next{
   right:10px;
 }
-        /* ===== RESPONSIVE MOBILE ===== */
+@media (max-width:768px){
+
+.promo-title{
+font-size:2rem;
+text-align:center;
+}
+
+.promo-text{
+text-align:center;
+}
+
+.promo-slider-wrapper{
+margin-bottom:30px;
+aspect-ratio:3/4;
+}
 .tentang-slider-wrapper{
   margin-bottom:30px;
 aspect-ratio:3/4;
 }
 
+}
     </style>
 </head>
 <body class="bg-white smooth-scroll">
@@ -232,7 +206,7 @@ aspect-ratio:3/4;
        class="rounded-full shadow-2xl w-full max-w-[200px] sm:max-w-[240px] mt-6 sm:mt-10" 
        alt="Breka Coffee">
 
-  <h1 class="text-2xl sm:text-3xl font-extrabold text-white text-center leading-relaxed">
+  <h1 data-lang="hero_title" class="text-2xl sm:text-3xl font-extrabold text-white text-center leading-relaxed">
     RECHARGE YOUR DAY<br>WITH BREKA COFFEE
   </h1>
 
@@ -266,6 +240,19 @@ aspect-ratio:3/4;
     </div>
   </div>
 </section>
+<!-- SECTION PROMO BUKBER -->
+<section class="py-20 bg-white">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="grid md:grid-cols-2 gap-12 items-center">
+
+
+</div>
+
+</div>
+
+</section>
 
     <!-- Breka Mood Section -->
 <section class="bg-white py-16">
@@ -274,7 +261,7 @@ aspect-ratio:3/4;
       
       <!-- Gambar Poster -->
       <div class="flex justify-center md:justify-end">
-        <img src="brekamoodsignature.jpg" 
+        <img src="brekamoodsignature.png" 
              alt="Breka Mood Poster" 
              class="rounded-2xl shadow-lg w-full md:w-4/5 lg:w-3/4">
       </div>
@@ -370,7 +357,7 @@ aspect-ratio:3/4;
 
     <!-- Foto Menu Lengkap -->
   <section class="max-w-4xl mx-auto px-4 py-12 text-center">
-    <img src="menubreka.jpg" alt="Menu Breka Coffee" class="rounded-lg shadow-lg mx-auto">
+    <img src="MENU-BREKA-COFFEE.png" alt="Menu Breka Coffee" class="rounded-lg shadow-lg mx-auto">
     <div class="mt-6">
     </div>
   </section>
@@ -537,14 +524,7 @@ tentangPrev.addEventListener("click", ()=>{
   }
   updateTentangSlider();
 });
+
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
