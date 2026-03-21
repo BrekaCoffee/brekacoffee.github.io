@@ -60,61 +60,7 @@
         @media (min-width: 641px) {
             #hero .cta-btn { padding: 0.75rem 1.75rem; display: inline-block; max-width: max-content; }
         }
-        
-        .promo-title{
-font-family:'Balsamiq Sans', sans-serif;
-font-weight:700;
-font-size:3rem;
-color:#000;
-letter-spacing:1px;
-line-height:1.2;
-margin-bottom:20px;
-}
-.promo-text{
-font-family: 'Balsamiq Sans', sans-serif;
-font-weight: 400;
-color: black;
-}
-        /* === BREKA IG STYLE SLIDER (FIX SIZE, NO TABRAK) === */
-.promo-slider-wrapper{
-position:relative;
-max-width:600px;
-margin:0 auto 40px auto;
-overflow:hidden;
-border-radius:20px;
-aspect-ratio:4/3;
-}
-
-.promo-slider{
-display:flex;
-transition:transform .5s ease;
-}
-
-.promo-slide{
-min-width:100%;
-height:450px;
-object-fit:contain;
-background:white;
-}
-
-.promo-prev,
-.promo-next{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,.5);
-color:white;
-border:none;
-font-size:26px;
-width:40px;
-height:40px;
-border-radius:50%;
-cursor:pointer;
-}
-
-.promo-prev{left:10px;}
-.promo-next{right:10px;}
-
+    
 .breka-slider {
   position: relative;
   width: 100%;
@@ -228,21 +174,6 @@ cursor:pointer;
   right:10px;
 }
         /* ===== RESPONSIVE MOBILE ===== */
-@media (max-width:768px){
-
-.promo-title{
-font-size:2rem;
-text-align:center;
-}
-
-.promo-text{
-text-align:center;
-}
-
-.promo-slider-wrapper{
-margin-bottom:30px;
-aspect-ratio:3/4;
-}
 .tentang-slider-wrapper{
   margin-bottom:30px;
 aspect-ratio:3/4;
@@ -334,78 +265,6 @@ aspect-ratio:3/4;
            alt="Breka Coffee">
     </div>
   </div>
-</section>
-<!-- SECTION PROMO BUKBER -->
-<section class="py-20 bg-white">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<div class="grid md:grid-cols-2 gap-12 items-center">
-
-<!-- FOTO SLIDER -->
-<div class="promo-slider-wrapper">
-
-<div class="promo-slider">
-
-<img src="paketiftarramadan.jpeg" class="promo-slide">
-<img src="paket1.jpeg" class="promo-slide">
-<img src="paket2.jpeg" class="promo-slide">
-<img src="paket3.jpeg" class="promo-slide">
-<img src="paket4.jpeg" class="promo-slide">
-<img src="paket5.jpeg" class="promo-slide">
-<img src="paket6.jpeg" class="promo-slide">
-<img src="syarat.jpeg" class="promo-slide">
-
-</div>
-
-<button class="promo-prev">‹</button>
-<button class="promo-next">›</button>
-
-</div>
-
-<!-- TEXT PROMO -->
-<div class="text-center md:text-left">
-
-<h2 class="promo-title mb-6">
-Paket Murah Buka Puasa Bersama
-</h2>
-
-<p class="promo-text text-lg mb-4">
-Udah siap bukber bareng bestie, keluarga, rekan kerja atau teman reuni sekolah? ✨
-</p>
-
-<p class="promo-text text-lg mb-4">
-Tenang, kami udah siapkan Paket Murah Buka Bersama yang bikin kenyang & happy!
-</p>
-
-<div class="promo-text space-y-2 text-lg mb-6">
-<p>✔ Makan Enak</p>
-<p>✔ Minum Enak</p>
-<p>✔ Tempat Cozy</p>
-<p>✔ Foto-Foto Cantik</p>
-</div>
-
-<p class="promo-text text-2xl font-bold text-red-500 mb-6">
-MURAAAHHH!!! 🔥🔥🔥
-</p>
-
-<a href="https://wa.me/628137100069?text=Halo%20Breka,%20aku%20mau%20reservasi%20Paket%20Bukber.%20Boleh%20dibantu%20untuk%20proses%20reservasinya%20ya?"
-target="_blank"
-class="inline-flex items-center gap-2 mt-6 mx-auto md:mx-0 bg-[#25D366] text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:scale-105 transition">
-
-<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-<path d="M20.52 3.48A11.82 11.82 0 0012.03 0C5.39 0 .02 5.37.02 12c0 2.12.55 4.19 1.59 6.02L0 24l6.14-1.6A11.96 11.96 0 0012.03 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.51-8.52z"/>
-</svg>
-
-Reservasi via WhatsApp
-</a>  
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
     <!-- Breka Mood Section -->
@@ -678,33 +537,6 @@ tentangPrev.addEventListener("click", ()=>{
   }
   updateTentangSlider();
 });
-        const promoSlider = document.querySelector(".promo-slider")
-const promoSlides = document.querySelectorAll(".promo-slide")
-
-const promoPrev = document.querySelector(".promo-prev")
-const promoNext = document.querySelector(".promo-next")
-
-let promoIndex = 0
-
-function updatePromoSlider(){
-promoSlider.style.transform = "translateX(-" + promoIndex * 100 + "%)"
-}
-
-promoNext.addEventListener("click", ()=>{
-promoIndex++
-if(promoIndex >= promoSlides.length){
-promoIndex = 0
-}
-updatePromoSlider()
-})
-
-promoPrev.addEventListener("click", ()=>{
-promoIndex--
-if(promoIndex < 0){
-promoIndex = promoSlides.length - 1
-}
-updatePromoSlider()
-})
     </script>
 </body>
 </html>
