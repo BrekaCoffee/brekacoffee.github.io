@@ -1,530 +1,760 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BREKA COFFEE Pekanbaru</title>
-    <meta name="robots" content="index, follow">
-    <meta name="keywords" content="BREKA COFFEE, Breka Mood, Breka Booster, Breka Matcha, Montea, Brekacino, Breka Choco, pekanbaru. Teman Recharge Kamu Setiap Hari!">
-    <meta name="author" content="Breka Coffee">
-    <meta name="description" content="BREKA COFFEE Pekanbaru – Breka Mood, Breka Booster, Breka Matcha, Montea, Brekacino, Breka Choco. Teman Recharge Kamu Setiap Hari!.">
-    <link rel="canonical" href="https://brekacoffee.github.io/">
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'breka-blue': '#55abe5',
-                        'breka-dark': '#2C3E50',
-                        'breka-light': '#F8F9FA'
-                    }
-                }
-            }
+  <!DOCTYPE html>
+  <html lang="id" class="scroll-smooth">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Breka Coffee - Recharge Your Day</title>
+  <meta name="description" content="Breka Coffee Pekanbaru. Kopi susu gula aren premium.">
+
+  <link rel="icon" href="favicon.png">
+  <link rel="icon" type="image/png" href="breka_logo_512-removebg-preview.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          primary: "#55abe5",
         }
-    </script>
-    <link rel="icon" type="image/png" href="breka_logo_512-removebg-preview.png">
-    <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- Open Graph (biar bagus kalau dishare ke sosmed) -->
-  <meta property="og:title" content="BREKA COFFEE Pekanbaru">
-  <meta property="og:description" content="Recharge mood kamu di Breka Coffee.">
-  <meta property="og:image" content="https://brekacoffee.github.io/favicon.png">
-  <meta property="og:url" content="https://brekacoffee.github.io/">
-  <meta name="twitter:card" content="summary">
-    <style>
-        #loading-screen { background: white; position: fixed; inset: 0; display: flex; justify-content: center; align-items: center; z-index: 9999; }
-        .logo-container { width: 200px; height: 200px; animation: bounce 2s infinite ease-in-out, scaleUp 2s ease-out forwards; transform: scale(0); }
-        .breka-logo { width: 100%; height: 100%; object-fit: contain; animation: flash 1s infinite; }
-        @keyframes flash { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-        @keyframes scaleUp { 0% { transform: scale(0); } 100% { transform: scale(1); } }
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
-        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-        .mobile-menu { transform: translateX(-100%); transition: transform 0.3s ease; }
-        .mobile-menu.open { transform: translateX(0); }
-        @keyframes fadeSlideIn { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
-        .fade-slide { animation: fadeSlideIn 1s ease forwards; }
-        @media (max-width: 640px) {
-            #hero { flex-direction: column; text-align: center; }
-            #hero h1 { font-size: 1.5rem; font-weight: 900; line-height: 1.3; margin-top: 1rem; }
-            #hero img { max-width: 150px; margin: 0 auto; }
-            #hero .cta-btn { margin: 1rem auto 0 auto; display: inline-block; padding: 0.5rem 1.25rem; max-width: max-content; }
-        }
-        @media (min-width: 641px) {
-            #hero .cta-btn { padding: 0.75rem 1.75rem; display: inline-block; max-width: max-content; }
-        }
-
-/* tombol */
-.breka-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.55);
-  color: white;
-  border: none;
-  font-size: 26px;
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.breka-nav.left { left: -18px; }
-.breka-nav.right { right: -18px; }
-
-/* mobile aman */
-@media (max-width: 640px) {
-  .breka-slider {
-    max-width: 100%;
-    height: 260px;
+      }
+    }
   }
-}
-/* SLIDER TENTANG */
+  </script>
 
-.tentang-slider-wrapper{
-  position:relative;
-  max-width:600px;
-  margin:40px auto;
-  overflow:hidden;
-  border-radius:20px;
-  aspect-ratio: 4 / 3;
+  <style>
+    .logo-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  /* talk box glass */
+  .talk-box {
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: fadeUp 1.5s ease;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .talk-box a {
+    box-shadow: 0 0 20px rgba(255,255,255,0.5);
+  }
+  body { font-family: 'Poppins', sans-serif; }
+
+  /* smooth animation */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all .8s ease;
+  }
+  .fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* menu */
+  .menu-item {
+    transition: all .3s;
+  }
+  .menu-item.active {
+    background: #55abe5;
+    color: white;
+  }
+
+  /* glass effect */
+  .glass {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.7);
+  }
+  .dark .glass {
+    background: rgba(0,0,0,0.5);
+  }
+
+  /* HERO LIGHT MODE */
+.hero {
+  background: #55abe5;
 }
 
-.tentang-slider{
-  display:flex;
-  transition:transform 0.5s ease;
+/* HERO DARK MODE */
+.dark .hero {
+  background: radial-gradient(circle at top, #1e3a5f, #000);
+}
+  #aboutSlider img {
+  object-fit: cover;
+  height: 350px;
+}
+#contact .bg-white:hover {
+  box-shadow: 0 0 30px rgba(85,171,229,0.3);
+}
+footer h3 {
+  text-shadow: 0 0 10px rgba(85,171,229,0.5);
+}
+/* hover link glow */
+footer a:hover {
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
 }
 
-.tentang-slide{
-  min-width:100%;
-  height:450px;
-  object-fit:contain;
-  background:white;
+/* map hover zoom */
+iframe:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+#instagram img {
+  filter: grayscale(100%);
 }
 
-.tentang-prev,
-.tentang-next{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:rgba(0,0,0,0.5);
-  color:white;
-  border:none;
-  font-size:26px;
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  cursor:pointer;
+#instagram img:hover {
+  filter: grayscale(0%);
 }
+  </style>
 
-.tentang-prev{
-  left:10px;
-}
+  </head>
 
-.tentang-next{
-  right:10px;
-}
-@media (max-width:768px){
+  <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
 
-.promo-title{
-font-size:2rem;
-text-align:center;
-}
+ <!-- NAVBAR -->
+<nav class="fixed w-full z-50 glass">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
 
-.promo-text{
-text-align:center;
-}
+    <!-- LOGO -->
+    <a href="#beranda" class="flex items-center gap-2 group">
+      <img src="breka_logo_512.png"
+        class="w-8 h-8 rounded-full shadow-md 
+        group-hover:rotate-6 group-hover:scale-110 transition duration-300">
 
-.promo-slider-wrapper{
-margin-bottom:30px;
-aspect-ratio:3/4;
-}
-.tentang-slider-wrapper{
-  margin-bottom:30px;
-aspect-ratio:3/4;
-}
+      <h1 class="font-bold text-primary text-xl 
+        group-hover:tracking-wider transition-all duration-300">
+        Breka
+      </h1>
+    </a>
 
-}
-    </style>
-</head>
-<body class="bg-white smooth-scroll">
-    <div id="loading-screen">
-        <div class="logo-container">
-            <img class="breka-logo" src="breka_logo_512-removebg-preview.png" alt="Breka Logo">
-        </div>
+    <!-- MENU DESKTOP -->
+    <div class="hidden md:flex gap-6">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </div>
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="#" class="flex items-center py-4 px-2">
-                    <img src="breka_logo_512-removebg-preview.png" class="h-8 w-8 mr-2" alt="Breka Coffee">
-                    <span class="font-semibold text-[#55abe5] text-lg">Breka Coffee</span>
-                </a>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#hero" class="nav-link text-gray-700 hover:text-breka-blue px-3 py-2">Beranda</a>
-                        <a href="#tentang" class="nav-link text-gray-700 hover:text-breka-blue px-3 py-2">Tentang</a>
-                        <a href="#menu" class="nav-link text-gray-700 hover:text-breka-blue px-3 py-2">Menu</a>
-                        <a href="#kontak" class="nav-link text-gray-700 hover:text-breka-blue px-3 py-2">Kontak</a>
-                    </div>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-breka-blue">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-y-0 left-0 w-64 bg-white shadow-xl z-50">
-            <div class="flex flex-col h-full p-4 space-y-4">
-                <button id="close-mobile-menu" class="self-end text-gray-700 hover:text-breka-blue">✕</button>
-                <a href="#hero" class="mobile-nav-link text-gray-700 hover:text-breka-blue py-2">Beranda</a>
-                <a href="#tentang" class="mobile-nav-link text-gray-700 hover:text-breka-blue py-2">Tentang</a>
-                <a href="#menu" class="mobile-nav-link text-gray-700 hover:text-breka-blue py-2">Menu</a>
-                <a href="#kontak" class="mobile-nav-link text-gray-700 hover:text-breka-blue py-2">Kontak</a>
-            </div>
-        </div>
-    </nav>
+    <!-- RIGHT -->
+    <div class="flex items-center gap-3">
 
-    <!-- Hero Section -->
-<section id="hero" class="pt-16 min-h-screen flex items-center justify-center bg-[#55abe5]">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center fade-slide">
-    
-    <!-- Mobile Layout -->
-<div class="flex flex-col items-center lg:hidden space-y-12 sm:space-y-16"> 
-  <img src="breka_logo_512.png" 
-       class="rounded-full shadow-2xl w-full max-w-[200px] sm:max-w-[240px] mt-6 sm:mt-10" 
-       alt="Breka Coffee">
+      <!-- DARK MODE -->
+      <button id="darkToggle">🌙</button>
 
-  <h1 data-lang="hero_title" class="text-2xl sm:text-3xl font-extrabold text-white text-center leading-relaxed">
-    RECHARGE YOUR DAY<br>WITH BREKA COFFEE
+      <!-- HAMBURGER -->
+      <button id="menuBtn" class="md:hidden text-2xl">
+        ☰
+      </button>
+    </div>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+    <div class="flex flex-col gap-3 bg-white dark:bg-gray-800 p-4 rounded-xl shadow">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+  <!-- HERO -->
+  <section id="beranda" class="hero min-h-screen flex items-center justify-center text-center text-white">
+
+  <div class="fade-up flex flex-col items-center">
+
+  <!-- LOGO BULAT -->
+  <img src="breka_logo_512.png"
+      class="w-28 md:w-36 mb-6 rounded-full shadow-2xl border-4 border-white/30">
+
+  <h1 class="text-5xl font-bold mb-4">
+  Recharge Your Day 
   </h1>
 
-  <a href="https://brekacoffee.github.io/Talk-With-Breka/" 
-     target="_blank" 
-     class="cta-btn bg-white text-[#55abe5] rounded-lg font-semibold 
-            hover:bg-[#FFD321] hover:text-white transition-all duration-200 
-            shadow-lg px-8 py-4 mt-4 sm:mt-6">
-     Talk With Breka
+  <p class="mb-6 text-lg">
+  Bertumbuh 1% Setiap Hari Bersama Breka Coffee
+  </p>
+
+  <div class="flex justify-center gap-4">
+  <a href="#menu" class="bg-white text-primary px-6 py-3 rounded-full">
+  Lihat Menu
   </a>
-</div>
 
-
-
-    <!-- Desktop Layout -->
-    <div class="hidden lg:flex flex-col justify-center space-y-6">
-      <h1 class="text-4xl lg:text-5xl font-extrabold text-white leading-snug">
-        RECHARGE YOUR DAY<br>WITH BREKA COFFEE
-      </h1>
-      <a href="https://brekacoffee.github.io/Talk-With-Breka/" 
-         target="_blank" 
-         class="cta-btn bg-white text-[#55abe5] rounded-lg font-semibold hover:bg-[#FFD321] hover:text-white transition-all duration-200 shadow-lg px-6 py-3 w-fit">
-         Talk With Breka
-      </a>
-    </div>
-    <!-- Logo Desktop -->
-    <div class="hidden lg:flex justify-center lg:justify-end fade-slide">
-      <img src="breka_logo_512.png" 
-           class="rounded-full shadow-2xl max-w-[280px] lg:max-w-[300px] h-auto" 
-           alt="Breka Coffee">
-    </div>
-  </div>
-</section>
-<!-- SECTION PROMO BUKBER -->
-<section class="py-20 bg-white">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<div class="grid md:grid-cols-2 gap-12 items-center">
-
-
-</div>
-
-</div>
-
-</section>
-
-    <!-- Breka Mood Section -->
-<section class="bg-white py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      
-      <!-- Gambar Poster -->
-      <div class="flex justify-center md:justify-end">
-        <img src="brekamoodsignature.jpg" 
-             alt="Breka Mood Poster" 
-             class="rounded-2xl shadow-lg w-full md:w-4/5 lg:w-3/4">
-      </div>
-
-      <!-- Teks lho ya -->
-      <div class="text-center md:text-left">
-        <h2 class="text-3xl md:text-4xl font-bold text-breka-dark mb-4">
-          BREKA MOOD – Signature Kopi Susu Gula Aren
-        </h2>
-        <p class="text-gray-600 text-lg mb-6">
-          Nikmati kopi susu gula aren dengan rasa spesial yang bikin hari kamu lebih semangat.
-          Dibuat dengan racikan fresh setiap hari, pas untuk mood apapun!
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-    
-    <!-- About Section -->
-<section id="tentang" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
-        <div class="text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-breka-dark mb-6">Tentang Breka</h2>
-
-            <!-- Layer 1: Intro singkat -->
-            <div id="layer1">
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Kami percaya setiap orang selalu punya cerita... Tentang cinta yang tak selalu mudah, keluarga yang jadi sandaran, kerjaan yang bikin lelah, atau masa depan yang kadang terasa samar. Di tengah itu semua butuh satu hal kecil yang bisa menguatkan, bukan jawaban atas semua masalah tapi sekadar pengingat bahwa kamu nggak sendirian. Itulah kenapa Breka hadir.
-                </p>
-                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Bagi Breka, kopi bukan hanya minuman. Ia adalah jeda singkat yang bisa jadi penguat, teman bercerita, bahkan pelukan hangat di hari yang berat.
-                </p>
-            </div>
-
-            <!-- Tombol More -->
-            <button id="moreBtn" class="mt-6 px-6 py-2 bg-breka-dark text-white rounded-lg hover:bg-breka-hover transition-colors">
-                More
-            </button>
-
-             <!-- Slider Foto ala Feed IG -->
-<div class="tentang-slider-wrapper">
-
-  <div class="tentang-slider">
-    <img src="brekakiri.jpeg" class="tentang-slide active">
-    <img src="brekatengah.jpeg" class="tentang-slide">
-    <img src="brekakanan.jpeg" class="tentang-slide">
   </div>
 
-  <button class="tentang-prev">‹</button>
-  <button class="tentang-next">›</button>
+  </div>
 
-</div>
-
-            <!-- Layer 2: Konten fokus Breka (hidden awalnya) -->
-            <div id="layer2" class="hidden mt-8 p-8 bg-breka-light rounded-xl shadow-lg max-w-3xl mx-auto transition-all duration-500">
-                <p class="mb-4 text-gray-700">
-                    Bukan hanya untuk mengisi gelasmu dengan kopi, tapi juga hatimu dengan rasa dimengerti. Setiap tegukan kopi Breka ditemani dengan stiker quotes yang bisa saja tepat dengan perasaan kamu saat itu. Sebuah pesan kecil yang bisa jadi pengingat bahwa kamu nggak sendirian.
-                </p>
-                <p class="mb-4 text-gray-700">
-                    Dan ketika momen penting datang Breka ingin hadir, seperti keluarga atau sahabat yang tak pernah lupa. Karena bagi kami, Breka bukan sekadar brand kopi. Breka adalah support system, pengingat, dan tempatmu recharge di tengah perjalanan hidupmu yang berat dan penuh tantangan.
-                </p>
-                <p class="text-gray-800 font-semibold">
-                    Breka Coffee – Recharge Your Day, Recharge Your Life.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-       <!-- Menu Section -->
-    <section id="menu" class="py-20 bg-gray-50">
-        <!-- GRID POSTER -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-4xl mx-auto">
-
-      <!-- Poster 1 -->
-      <div class="rounded-lg shadow">
-        <img
-          src="bestcoffee.jpeg"
-          alt="Breka Mood"
-          class="w-full aspect-[2/4] object-contain max-h-[600px] mx-auto"
-        >
-      </div>
-
-      <!-- Poster 2 -->
-      <div class="rounded-lg shadow">
-        <img
-          src="premium.jpeg"
-          alt="Breka Booster"
-          class="w-full aspect-[2/4] object-contain max-h-[600px] mx-auto"
-        >
-      </div>
-    </section>
-
-    <!-- Foto Menu Lengkap -->
-  <section class="max-w-4xl mx-auto px-4 py-12 text-center">
-    <img src="menubreka.jpg" alt="Menu Breka Coffee" class="rounded-lg shadow-lg mx-auto">
-    <div class="mt-6">
-    </div>
   </section>
 
-<div class="mt-6 flex justify-center">
-  <a href="bukumenu brekacoffeenew.pdf"
-     target="_blank"
-     class="inline-flex items-center gap-2 bg-[#55abe5] text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-[#3d8fc7] transition">
-     
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round"
-            d="M12 20h9M12 4h9M4 12h16"/>
-    </svg>
+  <section>
+      <!-- 💬 TALK WITH BREKA -->
+    <div class="absolute bottom-10 w-full flex justify-center z-10">
 
-    Menu Digital (PDF)
-  </a>
-</div>
+      <div class="talk-box text-center px-6 py-4 rounded-2xl">
 
+        <p class="text-sm md:text-base text-white/80 mb-3 italic">
+          “Nggak semua harus kamu kuat sendiri…”
+        </p>
 
-<!-- Instagram Follow Section -->
-<section class="bg-gray-50 py-12 text-center">
-  <h2 class="text-2xl font-semibold text-gray-700 mb-2">Follow Kami!</h2>
-  <a href="https://instagram.com/brekacoffee.id" target="_blank" class="text-[#55abe5] text-3xl font-bold hover:underline">
-    @brekacoffee.id
-  </a>
-  <div class="mt-4">
-    <a href="https://instagram.com/brekacoffee.id" target="_blank"
-       class="inline-flex items-center gap-2 border border-pink-500 text-pink-500 px-5 py-2 rounded-full font-medium hover:bg-pink-500 hover:text-white transition">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M7.75 2C4.678 2 2 4.678 2 7.75v8.5C2 19.322 4.678 22 7.75 22h8.5c3.072 0 5.75-2.678 5.75-5.75v-8.5C22 4.678 19.322 2 16.25 2h-8.5zm0 1.5h8.5c2.36 0 4.25 1.89 4.25 4.25v8.5c0 2.36-1.89 4.25-4.25 4.25h-8.5A4.255 4.255 0 0 1 3.5 16.25v-8.5c0-2.36 1.89-4.25 4.25-4.25zm8.75 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 1.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7z"/>
-      </svg>
-      Follow
-    </a>
+        <a href="https://brekacoffee.github.io/Talk-With-Breka/" 
+          target="_blank"
+          class="inline-block bg-white text-primary px-6 py-2 rounded-full font-semibold hover:scale-105 transition">
+          💬 Talk With Breka
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+  </section>
+
+  <section id="bestseller" class="py-20 bg-white dark:bg-gray-900 reveal">
+
+  <div class="max-w-6xl mx-auto px-4 text-center">
+
+    <!-- TITLE -->
+    <h2 class="text-3xl font-bold mb-2">
+      Best Seller 🔥
+    </h2>
+
+    <p class="text-gray-500 mb-10">
+      Favorit customer Breka
+    </p>
+
+    <!-- CARD -->
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- ITEM 1 -->
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg p-6 hover:scale-105 transition">
+
+        <img src="bestcoffee.jpeg"
+             alt="Breka Mood kopi susu gula aren"
+             class="rounded-xl mb-4 mx-auto w-full max-w-xs">
+
+        <h3 class="text-xl font-bold">Breka Mood</h3>
+        <p class="text-gray-500 text-sm mb-2"></p>
+
+        <p class="text-primary font-bold text-lg mb-4">
+         
+        </p>
+
+        <a href="#menu"
+           class="bg-primary text-white px-5 py-2 rounded-full text-sm">
+          Lihat Menu
+        </a>
+
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg p-6 hover:scale-105 transition">
+
+        <img src="premium.jpeg"
+             alt="Breka Booster kopi strong"
+             class="rounded-xl mb-4 mx-auto w-full max-w-xs">
+
+        <h3 class="text-xl font-bold">Breka Mood</h3>
+        <p class="text-gray-500 text-sm mb-2"></p>
+
+        <p class="text-primary font-bold text-lg mb-4">
+          
+        </p>
+
+        <a href="#menu"
+           class="bg-primary text-white px-5 py-2 rounded-full text-sm">
+          Lihat Menu
+        </a>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
-    
-    <!-- Contact Section -->
-    <section id="kontak" style="background-color: #55abe5;" class="py-20 text-white text-center fade-in">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8">Hubungi Kami</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                <div>
-                    <div class="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Email</h3>
-                    <p>brekacoffee.id@gmail.com</p>
-                </div>
-                <div>
-                    <div class="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Telepon</h3>
-                    <p>+62 812 8188 2002</p>
-                </div>
-                <div>
-                    <div class="w-16 h-16 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Alamat</h3>
-                    <p>Jl. Sultan Syarif Qasim No.138, Kota Tinggi, Kec. Pekanbaru Kota<br>Pekanbaru, Riau</p>
-                </div>
-            </div>
+<section class="py-20 bg-white dark:bg-gray-900 text-center">
+
+  <h2 class="text-3xl font-bold mb-10">
+    Kata Mereka 💬
+  </h2>
+
+  <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6 px-4">
+
+    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl">
+      <p class="text-sm italic mb-3 text-gray-600 dark:text-gray-300">
+        "Kopinya enak banget, tempatnya juga nyaman!"
+      </p>
+      <h4 class="font-semibold">– Silvia</h4>
+    </div>
+
+    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl">
+      <p class="text-sm italic mb-3 text-gray-600 dark:text-gray-300">
+        "Breka Mood juara sih 🔥"
+      </p>
+      <h4 class="font-semibold">– Gilang</h4>
+    </div>
+
+    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl">
+      <p class="text-sm italic mb-3 text-gray-600 dark:text-gray-300">
+        "Tempat healing + kopi enak 😭"
+      </p>
+      <h4 class="font-semibold">–Rizki</h4>
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- SIGNATURE -->
+  <section class="py-20 fade-up">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4">
+
+  <img src="brekamoodsignature.png"
+  class="rounded-2xl shadow-xl">
+
+  <div>
+  <h2 class="text-4xl font-bold mb-4">Breka Mood</h2>
+
+  <p class="text-gray-600 text-lg mb-6">
+  Nikmati kopi susu gula aren dengan rasa spesial yang bikin hari kamu lebih semangat. Dibuat dengan racikan fresh setiap hari, pas untuk mood apapun!Signature kopi susu gula aren.
+  </p>
+
+  <p class="text-primary text-xl font-bold mb-4">
+  
+  </p>
+
+
+
+  </div>
+
+  </div>
+  </section>
+
+
+  <section id="menu" class="py-20 bg-gray-50 dark:bg-gray-800 fade-up">
+
+  <div class="max-w-5xl mx-auto px-4 text-center">
+
+    <!-- TITLE -->
+    <h2 class="text-3xl font-bold mb-4">
+      Menu Breka ☕
+    </h2>
+
+    <p class="text-gray-500 mb-10"> 
+      Pilih minuman favorit kamu dan recharge harimu
+    </p>
+
+    <!-- FOTO MENU -->
+    <div class="flex justify-center mb-8">
+      <img src="menubreka.jpg"
+           alt="Menu Breka Coffee Pekanbaru"
+           class="rounded-2xl shadow-xl w-full max-w-2xl hover:scale-105 transition duration-300"
+           loading="lazy">
+    </div>
+
+    <!-- BUTTON PDF -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+      <a href="bukumenu brekacoffeenew.pdf"
+         target="_blank"
+         class="bg-primary text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition">
+        📄 Lihat Menu Lengkap (PDF)
+      </a>
+
+      <!-- PRIMARY CTA -->
+      <a href="https://gofood.co.id/pekanbaru/restaurant/breka-coffee-d9724fc1-039a-4fc8-ac5e-742169a5b4e6"
+         class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition">
+        🛵 Pesan di GoFood
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+  <!-- STORY -->
+<section id="about" class="py-20 fade-up">
+
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+
+    <!-- TEXT -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Tentang Breka</h2>
+
+      <p class="text-gray-500 leading-relaxed">
+        Breka bukan sekadar kopi.
+        Ini tempat kamu recharge dari capeknya hidup.
+        Setiap cup punya cerita, dan setiap cerita layak didengar.
+      </p>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="relative">
+
+      <div class="overflow-hidden rounded-2xl shadow-xl">
+
+        <div id="aboutSlider" class="flex transition-transform duration-500">
+
+          <img src="brekakiri.jpeg" class="w-full flex-shrink-0">
+          <img src="brekatengah.jpeg" class="w-full flex-shrink-0">
+          <img src="brekakanan.jpeg" class="w-full flex-shrink-0">
+
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8 text-center">
-        <div class="max-w-20xl mx-auto px-6 sm:px-8 lg:px-10">
-            <h3 class="text-2xl font-bold text-breka-blue mb-4">BREKA COFFEE</h3>
-            <p class="text-gray-400 mb-4">Take a Breka, Save Your Story</p>
-            <p class="text-gray-400 text-sm">© 2025 BREKA. Semua hak dilindungi.</p>
-        </div>
-    </footer>
+      </div>
 
-    <script>
-        window.addEventListener('load', () => {
-            setTimeout(() => document.getElementById('loading-screen').style.display = 'none', 3000);
-        });
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.toggle('open');
-            });
-            document.getElementById('close-mobile-menu').addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.remove('open');
-            });
-            const fadeEls = document.querySelectorAll('.fade-in');
-            function animateOnScroll(){
-                fadeEls.forEach(el => {
-                    if (el.getBoundingClientRect().top < window.innerHeight - 150) {
-                        el.classList.add('visible');
-                    }
-                });
-            }
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll();
-        });
-        const moreBtn = document.getElementById('moreBtn');
-    const layer2 = document.getElementById('layer2');
+      <!-- BUTTON -->
+      <button id="prevSlide"
+        class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-10 h-10 rounded-full">
+        ‹
+      </button>
 
-    moreBtn.addEventListener('click', () => {
-        if (layer2.classList.contains('hidden')) {
-            layer2.classList.remove('hidden');
-            moreBtn.textContent = 'Less';
-            layer2.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-            layer2.classList.add('hidden');
-            moreBtn.textContent = 'More';
-        }
-    });
+      <button id="nextSlide"
+        class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-10 h-10 rounded-full">
+        ›
+      </button>
 
-    // ===== SLIDER IG STYLE =====
-  const slides = document.querySelectorAll('.breka-slide');
-  let index = 0;
+    </div>
 
-  function updateSlide() {
-    slides.forEach((slide, i) => {
-      slide.className = 'breka-slide';
-      if (i === index) slide.classList.add('active');
-      else if (i === (index + 1) % slides.length) slide.classList.add('next');
-      else if (i === (index - 1 + slides.length) % slides.length) slide.classList.add('prev');
-    });
-  }
+  </div>
 
-  document.getElementById('nextSlide')?.addEventListener('click', () => {
-    index = (index + 1) % slides.length;
-    updateSlide();
+</section>
+
+<section class="py-20 bg-[#f5f9ff] dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800 text-center reveal">
+
+  <div class="max-w-6xl mx-auto px-4">
+
+    <!-- TITLE -->
+    <h2 class="text-3xl font-bold mb-2">
+      Follow Breka di Instagram 📸
+    </h2>
+
+    <p class="text-gray-500 dark:text-gray-400 mb-6">
+      Lihat update menu, promo, dan suasana Breka
+    </p>
+
+    <!-- USERNAME -->
+    <a href="https://instagram.com/brekacoffee.id"
+       target="_blank"
+       class="text-primary text-2xl font-bold hover:underline">
+      @brekacoffee.id
+    </a>
+
+    <!-- BUTTON -->
+    <div class="mt-4 mb-10">
+      <a href="https://instagram.com/brekacoffee.id"
+         target="_blank"
+         class="inline-block bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 
+                text-white px-6 py-3 rounded-full font-semibold 
+                shadow-md hover:scale-105 transition">
+        Follow Sekarang
+      </a>
+    </div>
+
+    <!-- FEED GRID -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <!-- POST 1 -->
+      <a href="https://www.instagram.com/p/DWdAo7ok5nc/" target="_blank">
+        <img src="mie pangsit.webp" class="w-full aspect-square object-cover rounded-xl shadow hover:scale-105 transition">
+      </a>
+
+      <!-- POST 1 -->
+      <a href="https://www.instagram.com/p/DWc--hIE6J1/" target="_blank">
+        <img src="chamber.webp" class="w-full aspect-square object-cover rounded-xl shadow hover:scale-105 transition">
+      </a>  
+
+      <!-- POST 1 -->
+      <a href="https://www.instagram.com/p/DWc9CMJk3Df/" target="_blank">
+        <img src="ricebowl.webp" class="w-full aspect-square object-cover rounded-xl shadow hover:scale-105 transition">
+      </a>
+
+       <!-- POST 1 -->
+      <a href="https://www.instagram.com/p/DWT3jOEjXhE/" target="_blank">
+        <img src="fams.webp" class="w-full aspect-square object-cover rounded-xl shadow hover:scale-105 transition">
+      </a>
+
+
+      <!-- POST 1 -->
+      <a href="https://www.instagram.com/p/DVpwUVZExfS/" target="_blank">
+        <img src="ig1.webp" class="w-full aspect-square object-cover rounded-xl shadow hover:scale-105 transition">
+      </a>
+
+      <!-- POST 2 -->
+      <a href="https://www.instagram.com/p/DV6Lh6gE4iy/" target="_blank">
+        <img src="ig2.webp" class="w-full aspect-square object-cover rounded-xl shadow hover:scale-105 transition">
+      </a>
+
+      <!-- POST 3 -->
+      <a href="https://www.instagram.com/p/DWRHNSplFgf/?img_index=1" target="_blank">
+        <img src="ig3.webp" class="w-full aspect-square object-cover rounded-xl shadow hover:scale-105 transition">
+      </a>
+
+      <!-- POST 4 -->
+      <a href="https://www.instagram.com/p/DWQn3xGjWHD/" target="_blank">
+        <img src="ig4.webp" class="w-full aspect-square object-cover rounded-xl shadow hover:scale-105 transition">
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 text-center reveal">
+
+  <div class="max-w-4xl mx-auto px-4">
+
+    <!-- TITLE -->
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      Hubungi Kami ☕
+    </h2>
+
+    <p class="text-gray-500 mb-10">
+      Punya pertanyaan atau mau reservasi? Kami siap bantu kamu.
+    </p>
+
+    <!-- CARD CONTAINER -->
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- PHONE -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+
+        <div class="text-3xl mb-3">📞</div>
+
+        <h3 class="font-semibold mb-1">Telepon</h3>
+        <p class="text-gray-500 text-sm mb-3">Hubungi langsung</p>
+
+        <a href="tel:6281281882002"
+           class="text-primary font-bold hover:underline">
+          0812-8188-2002
+        </a>
+
+      </div>
+
+      <!-- EMAIL -->
+<div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+
+  <div class="text-3xl mb-3">📧</div>
+
+  <h3 class="font-semibold mb-1">Email</h3>
+  <p class="text-gray-500 text-sm mb-3">Kirim pertanyaan atau kerja sama</p>
+
+  <a href="mailto:brekacoffee.id@gmail.com"
+     class="text-primary font-bold hover:underline">
+    brekacoffee.id@gmail.com
+  </a>
+
+</div>
+
+      <!-- LOKASI -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
+
+        <div class="text-3xl mb-3">📍</div>
+
+        <h3 class="font-semibold mb-1">Lokasi</h3>
+        <p class="text-gray-500 text-sm mb-3">Datang langsung</p>
+
+        <a href="https://maps.app.goo.gl/4ZRZNQdPDCeuYt1j8"
+           target="_blank"
+           class="text-primary font-bold hover:underline">
+          Lihat Maps
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- FLOATING CTA -->
+  <a href="https://wa.me/628137100069"
+  class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-xl">
+  💬
+  </a>
+
+  <footer class="bg-gray-900 text-white pt-16 pb-10 relative overflow-hidden">
+
+  <!-- GLOW BACKGROUND -->
+  <div class="absolute w-72 h-72 bg-primary/20 blur-3xl rounded-full top-[-100px] left-[-100px]"></div>
+
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-10 relative z-10">
+
+    <!-- BRAND -->
+    <div>
+      <img src="breka_logo_512.png" class="w-14 mb-4 logo-float">
+      <h3 class="text-2xl font-bold text-primary mb-3">Breka Coffee</h3>
+      <p class="text-gray-400 text-sm leading-relaxed">
+        Recharge Your Day. Tempat kamu istirahat sejenak dan merasa dimengerti.
+      </p>
+    </div>
+
+    <!-- MENU -->
+    <div>
+      <h4 class="font-semibold mb-4">Menu</h4>
+      <ul class="space-y-2 text-gray-400 text-sm">
+        <li><a href="#menu" class="hover:text-white transition">Lihat Menu</a></li>
+        <li><a href="#bestseller" class="hover:text-white transition">Best Seller</a></li>
+        <li><a href="#" class="hover:text-white transition">Promo</a></li>
+      </ul>
+    </div>
+
+    <!-- NAV -->
+    <div>
+      <h4 class="font-semibold mb-4">Navigasi</h4>
+      <ul class="space-y-2 text-gray-400 text-sm">
+        <li><a href="#about" class="hover:text-white">Tentang</a></li>
+        <li><a href="#contact" class="hover:text-white">Kontak</a></li>
+        <li>
+          <a href="https://brekacoffee.github.io/Talk-With-Breka/" 
+             target="_blank"
+             class="hover:text-white">
+            Talk With Breka
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- MAP + CONTACT -->
+    <div>
+      <h4 class="font-semibold mb-4">Lokasi Kami</h4>
+
+      <!-- MAP EMBED -->
+      <div class="rounded-xl overflow-hidden mb-4 shadow-lg">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6464501190612!2d101.4536425!3d0.5318179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5ad4621002119%3A0xcc1cab67be483a31!2sBREKA%20COFFEE!5e0!3m2!1sid!2sid!4v1774713211072!5m2!1sid!2sid"
+          class="w-full h-40 border-0">
+        </iframe>
+      </div>
+
+      <p class="text-sm text-gray-400">📍 Pekanbaru</p>
+      <p class="text-sm text-gray-400">📞 0812-8188-2002</p>
+
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-sm relative z-10">
+    © 2026 Breka Coffee. All rights reserved.
+  </div>
+
+</footer>
+
+  <script>
+
+    /* MOBILE MENU */
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
+  /* DARK MODE */
+  const toggle = document.getElementById("darkToggle");
+
+  toggle.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
   });
 
-  document.getElementById('prevSlide')?.addEventListener('click', () => { 
-    index = (index - 1 + slides.length) % slides.length;
-    updateSlide();
+  /* MENU INTERAKTIF */
+  const items = document.querySelectorAll(".menu-item");
+  const img = document.getElementById("menuImage");
+
+  items.forEach(item => {
+    item.addEventListener("click", () => {
+      img.src = item.dataset.img;
+      items.forEach(i => i.classList.remove("active"));
+      item.classList.add("active");
+    });
   });
 
-  updateSlide();
-/* SLIDER TENTANG */
+  /* SCROLL ANIMATION */
+  const fades = document.querySelectorAll(".fade-up");
 
-const tentangSlider = document.querySelector(".tentang-slider");
-const tentangSlides = document.querySelectorAll(".tentang-slide");
+  window.addEventListener("scroll", () => {
+    fades.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+        el.classList.add("show");
+      }
+    });
+  });
+  const quotes = [
+  "Kamu nggak sendirian.",
+  "Pelan-pelan juga nggak apa.",
+  "Hari ini berat ya?"
+  ];
 
-const tentangPrev = document.querySelector(".tentang-prev");
-const tentangNext = document.querySelector(".tentang-next");
+  let i = 0;
+  setInterval(() => {
+    document.querySelector(".talk-box p").textContent = quotes[i];
+    i = (i + 1) % quotes.length;
+  }, 3000);
+const slider = document.getElementById("aboutSlider");
+const slides = slider.children;
 
-let tentangIndex = 0;
+let index = 0;
 
-function updateTentangSlider(){
-  tentangSlider.style.transform = "translateX(-" + tentangIndex * 100 + "%)";
+document.getElementById("nextSlide").addEventListener("click", () => {
+  index++;
+  if (index >= slides.length) index = 0;
+  updateSlider();
+});
+
+document.getElementById("prevSlide").addEventListener("click", () => {
+  index--;
+  if (index < 0) index = slides.length - 1;
+  updateSlider();
+});
+function updateSlider() {
+  slider.style.transform = `translateX(-${index * 100}%)`;
 }
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
 
-tentangNext.addEventListener("click", ()=>{
-  tentangIndex++;
-  if(tentangIndex >= tentangSlides.length){
-    tentangIndex = 0;
-  }
-  updateTentangSlider();
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    if (scrollY >= top - 200) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(a => {
+    a.classList.remove("text-primary");
+    if (a.getAttribute("href") === "#" + current) {
+      a.classList.add("text-primary");
+    }
+  });
 });
 
-tentangPrev.addEventListener("click", ()=>{
-  tentangIndex--;
-  if(tentangIndex < 0){
-    tentangIndex = tentangSlides.length - 1;
-  }
-  updateTentangSlider();
-});
+  </script>
 
-    </script>
-</body>
-</html>
+  </body>
+  </html>
