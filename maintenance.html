@@ -129,36 +129,10 @@ Kami sedang melakukan pembaruan agar pengalaman kamu lebih baik ☕
 </div>
 
 <div class="countdown">
-Kembali dalam <span id="timer">05:00</span>
+Sedang melakukan update untuk pengalaman yang lebih baik ☕
 </div>
 
 </div>
-
-<script>
-
-let time = 300
-
-function updateTimer(){
-
-let minutes = Math.floor(time/60)
-let seconds = time % 60
-
-seconds = seconds < 10 ? "0"+seconds : seconds
-
-document.getElementById("timer").innerText =
-minutes + ":" + seconds
-
-time--
-
-if(time < 0){
-time = 300
-}
-
-}
-
-setInterval(updateTimer,1000)
-
-</script>
 
 </body>
 </html>
