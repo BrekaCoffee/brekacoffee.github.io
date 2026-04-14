@@ -243,7 +243,61 @@ iframe:hover {
     </div>
 
   </section>
-  </section>
+    
+  <!-- ARTICLE SECTION -->
+<section id="article" class="py-24 bg-gray-100 dark:bg-zinc-900 px-6 relative overflow-hidden">
+
+  <!-- BACKGROUND GLOW -->
+  <div class="absolute w-72 h-72 bg-primary/20 blur-3xl rounded-full top-[-80px] right-[-80px]"></div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+
+    <!-- TITLE -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">Breka Stories</h2>
+      <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+        Cerita, pikiran, dan momen kecil yang mungkin relate sama hidup.
+      </p>
+    </div>
+
+    <!-- GRID ARTIKEL -->
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+      <!-- CARD 1 -->
+      <div onclick="openArticle('article1')" class="cursor-pointer group bg-white dark:bg-black rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+
+        <img src="brekafridaynight.png" class="w-full object-contain rounded-lg">
+
+        <div class="p-6">
+          <p class="text-xs text-primary mb-2">Event</p>
+          <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition">
+            FRIDAY NIGHT BREKA, LAGI?
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            STAY TUNED — IT’S COMING BACK
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div onclick="openArticle('article3')" class="cursor-pointer group bg-white dark:bg-black rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+         <img src="fridaynight.webp" class="w-full object-contain rounded-lg">
+        <div class="p-6">
+          <p class="text-xs text-primary mb-2">Event</p>
+          <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition">
+            Friday Night bukan sekadar nongkrong, tapi ini EXPERIENCE!
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            Musik, komunitas, dan kopi dalam satu malam.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 
   <section id="bestseller" class="py-20 bg-white dark:bg-gray-900 reveal">
 
@@ -669,6 +723,16 @@ iframe:hover {
 
       <p class="text-sm text-gray-400">📍 Pekanbaru</p>
       <p class="text-sm text-gray-400">📞 0812-8188-2002</p>
+      <!-- JAM OPERASIONAL -->
+      <div class="mt-4">
+        <h5 class="font-semibold text-sm mb-2">🕒 Jam Operasional</h5>
+        <ul class="text-sm text-gray-400 space-y-1">
+          <li>Setiap hari: 07.00 – 23.00</li>
+        </ul>
+
+        <!-- STATUS (OPTIONAL) -->
+        <p id="statusOpen" class="text-xs text-green-400 mt-2">● Sedang Buka</p>
+      </div>
 
     </div>
 
@@ -682,10 +746,6 @@ iframe:hover {
 </footer>
 
   <script>
-
-    /* MOBILE MENU */
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
 
 menuBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
@@ -770,7 +830,115 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+function openArticle(id) {
+  const modal = document.getElementById("articleModal");
+  const content = document.getElementById("articleContent");
 
+  const articles = {
+    article1: `
+      <h2 class="text-2xl font-bold mb-4">FRIDAY NIGHT BREKA, LAGI? STAY TUNED — IT’S COMING BACK.</h2>
+       <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-xl mb-6">
+  <video 
+    src="brekafridaynight.mp4" 
+    class="w-full object-contain rounded-lg"
+    autoplay 
+    loop 
+    muted 
+    playsinline>
+    </video>
+  </div>
+      <p class="mb-4">Kadang Ada malam yang nggak cuma lewat begitu aja—malam yang penuh tawa, cerita, dan orang-orang yang datang bukan cuma buat ngopi, tapi buat ngerasain sesuatu.</p>
+      <p>Friday Night Breka akan hadir lagi, membawa vibe yang sama, bahkan lebih hidup.</p>
+      <p>Jadi, siap-siap buat malam yang bukan cuma tentang kopi, tapi tentang komunitas, musik, dan momen yang bikin kamu bilang, “Ini baru Friday Night!”</p>
+    `,
+    article2: `
+      <h2 class="text-2xl font-bold mb-4">Overthinking jam 2 pagi itu nyata.</h2>
+      <p class="mb-4">Semua jadi lebih berat di malam hari.</p>
+      <p>Kopi jadi teman diam yang gak pernah nge-judge.</p>
+    `,
+    article3: `
+      <h2 class="text-2xl font-bold mb-4">Friday Night: Chill & Vibes</h2>
+
+
+  <!-- POSTER -->
+  <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-xl mb-6">
+  <video 
+    src="fridaynight.mp4" 
+    class="w-full object-contain rounded-lg"
+    autoplay 
+    loop 
+    muted 
+    playsinline>
+  </video>
+</div>
+
+  <p class="mb-4">
+    Capek sama rutinitas? Friday Night di Breka hadir sebagai ruang buat release stress mu.
+  </p>
+
+  <p class="mb-4">
+    Mulai dari night run bareng komunitas, lanjut DJ vibes dari <b>DJ Vito</b>, sampai performance dari SMANSA Dance Community.
+  </p>
+
+  <p class="mb-6">
+    Ini bukan sekadar nongkrong. Ini experience.
+  </p>
+
+  <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-xl text-sm">
+    <p>📅 Jumat, 10 April 2026</p>
+    <p>📍 Breka Coffee</p>
+  </div>
+    `
+    
+  };
+
+  content.innerHTML = articles[id];
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+}
+
+function closeArticle() {
+  const modal = document.getElementById("articleModal");
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+}
+
+function updateStatus() {
+  const now = new Date();
+  const hour = now.getHours();
+  const minute = now.getMinutes();
+
+  const currentTime = hour * 60 + minute;
+  const open = 7 * 60;
+  const close = 23 * 60;
+
+  const statusEl = document.getElementById("statusOpen");
+
+  // guard biar aman
+  if (!statusEl) return;
+
+  if (currentTime >= open && currentTime < close) {
+    statusEl.innerHTML = "● Lagi Recharge-in Kamu ☕";
+    statusEl.classList.remove("text-red-400");
+    statusEl.classList.add("text-green-400");
+  } else {
+    statusEl.innerHTML = "● Lagi Istirahat Dulu 😴";
+    statusEl.classList.remove("text-green-400");
+    statusEl.classList.add("text-red-400");
+  }
+}
+
+// run pertama
+updateStatus();
+
+// update tiap 1 menit
+setInterval(updateStatus, 60000);
+
+// OPTIONAL (hapus kalau nggak dipakai)
+function setFont(size){
+  const el = document.getElementById('articleContent');
+  if (el) el.style.fontSize = size + 'px';
+}
   </script>
 
   </body>
