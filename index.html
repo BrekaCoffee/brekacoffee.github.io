@@ -266,15 +266,15 @@ iframe:hover {
       <!-- CARD 1 -->
       <div onclick="openArticle('article1')" class="cursor-pointer group bg-white dark:bg-black rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
 
-        <img src="brekafridaynight.png" class="w-full object-contain rounded-lg">
+        <img src="fridaynightbreka.jpeg" class="w-full h-80 object-contain rounded-lg">
 
         <div class="p-6">
           <p class="text-xs text-primary mb-2">Event</p>
           <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition">
-            FRIDAY NIGHT BREKA, LAGI?
+            FRIDAY NIGHT BREKA with @bike_kawan @inline.pekanbaru @pacs___ 
           </h3>
           <p class="text-sm text-gray-500 dark:text-gray-400">
-            STAY TUNED — IT’S COMING BACK
+            Chill & Vibes with Breka Coffee 🔥
           </p>
         </div>
       </div>
@@ -835,21 +835,24 @@ function openArticle(id) {
   const content = document.getElementById("articleContent");
 
   const articles = {
-    article1: `
-      <h2 class="text-2xl font-bold mb-4">FRIDAY NIGHT BREKA, LAGI? STAY TUNED — IT’S COMING BACK.</h2>
+     article1: `
+      <h2 class="text-2xl font-bold mb-4">FRIDAY NIGHT BREKA with @bike_kawan @inline.pekanbaru @pacs___ 
+</h2>
        <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-xl mb-6">
-  <video 
-    src="brekafridaynight.mp4" 
-    class="w-full object-contain rounded-lg"
-    autoplay 
-    loop 
-    muted 
-    playsinline>
-    </video>
+  <img src="fridaynightbreka.jpeg" class="w-full object-contain rounded-lg">
+</div>
+     <p class="mb-4">
+    Level Up Your Weekend - Chill & Vibes with Breka Coffee 🔥
+  </p>
+
+  <p class="mb-4">
+    Friday Night Breka lebih dari sekedar nongkrong tapi ini EXPERIENCE! 
+  </p>
+
+      <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-xl text-sm">
+    <p>📅 Jumat, 10 April 2026</p>
+    <p>📍 Breka Coffee</p>
   </div>
-      <p class="mb-4">Kadang Ada malam yang nggak cuma lewat begitu aja—malam yang penuh tawa, cerita, dan orang-orang yang datang bukan cuma buat ngopi, tapi buat ngerasain sesuatu.</p>
-      <p>Friday Night Breka akan hadir lagi, membawa vibe yang sama, bahkan lebih hidup.</p>
-      <p>Jadi, siap-siap buat malam yang bukan cuma tentang kopi, tapi tentang komunitas, musik, dan momen yang bikin kamu bilang, “Ini baru Friday Night!”</p>
     `,
     article2: `
       <h2 class="text-2xl font-bold mb-4">Overthinking jam 2 pagi itu nyata.</h2>
