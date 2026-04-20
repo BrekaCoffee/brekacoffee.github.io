@@ -865,14 +865,33 @@ function openArticle(id) {
 
   <!-- POSTER -->
   <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-xl mb-6">
+  <!-- VIDEO -->
   <video 
+    id="vid"
     src="fridaynight.mp4" 
     class="w-full object-contain rounded-lg"
-    autoplay 
-    loop 
-    muted 
+    loop
     playsinline>
   </video>
+
+  <!-- PLAY BUTTON -->
+  <button 
+    id="playBtn"
+    onclick="playVideo()"
+    class="absolute inset-0 flex items-center justify-center">
+
+    <div class="w-20 h-20 bg-black/60 hover:bg-black/80 backdrop-blur-md rounded-full flex items-center justify-center transition scale-100 hover:scale-110">
+
+      <!-- ICON PLAY -->
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="w-10 h-10 text-white ml-1" 
+           fill="currentColor" 
+           viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+
+    </div>
+  </button>
 </div>
 
   <p class="mb-4">
@@ -902,6 +921,15 @@ function openArticle(id) {
 
 function closeArticle() {
   const modal = document.getElementById("articleModal");
+
+  // 🔥 STOP SEMUA VIDEO DI DALAM MODAL
+  const videos = modal.querySelectorAll("video");
+
+  videos.forEach(v => {
+    v.pause();
+    v.currentTime = 0;
+  });
+
   modal.classList.add("hidden");
   modal.classList.remove("flex");
 }
@@ -941,6 +969,24 @@ setInterval(updateStatus, 60000);
 function setFont(size){
   const el = document.getElementById('articleContent');
   if (el) el.style.fontSize = size + 'px';
+}
+
+    function playVideo() {
+  const vid = document.getElementById("vid");
+  const btn = document.getElementById("playBtn");
+
+  vid.muted = false;
+  vid.play();
+
+  btn.style.display = "none";
+}
+
+// STOP VIDEO
+function stopVideo() {
+  const vid = document.getElementById("vid");
+
+  vid.pause();
+  vid.currentTime = 0; // reset ke awal (optional)
 }
   </script>
     <!-- ARTICLE MODAL -->
