@@ -281,7 +281,7 @@ iframe:hover {
       <!-- CARD 2 -->
       <div onclick="openArticle('article2')" class="cursor-pointer group bg-white dark:bg-black rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
 
-        <img src="liburun.png" class="w-full h-80 object-contain rounded-lg">
+        <img src="liburun.jpeg" class="w-full h-80 object-contain rounded-lg">
 
         <div class="p-6">
           <p class="text-xs text-primary mb-2">Event</p>
@@ -897,10 +897,37 @@ function openArticle(id) {
       <h2 class="text-2xl font-bold mb-4">FRIDAY NIGHT For Public
 </h2>
        <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded-xl mb-6">
-   <img src="liburun.mp4" class="w-full h-80 object-contain rounded-lg">
+    <video 
+    id="vid"
+    src="Fixmp4.mp4" 
+    class="w-full object-contain rounded-lg"
+    loop
+    playsinline>
+  </video>
+
+  <!-- PLAY BUTTON -->
+  <button 
+    id="playBtn"
+    onclick="playVideo()"
+    class="absolute inset-0 flex items-center justify-center">
+
+    <div class="w-20 h-20 bg-black/60 hover:bg-black/80 backdrop-blur-md rounded-full flex items-center justify-center transition scale-100 hover:scale-110">
+
+      <!-- ICON PLAY -->
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="w-10 h-10 text-white ml-1" 
+           fill="currentColor" 
+           viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+
+    </div>
+  </button>
 </div>
+
      <p class="mb-4">
-    Level Up Your Weekend 🔥
+    Level Up Your Weekend 🔥 </p>
+    <p class="mb-4">
 Chill & Vibes with Breka Coffee 😉🤙🏻
   </p>
 
